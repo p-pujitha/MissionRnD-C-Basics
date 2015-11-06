@@ -21,9 +21,11 @@ int variableArguments(int arg_count, ...)
 	va_list ap;
 	int count = 0;
 	va_start(ap, arg_count);
-	for (int i = arg_count; i >= 0; i = va_arg(ap, int))
+	for (int i = arg_count; i > 0; i--)
 	{
-		if (i > 90)
+		int num = va_arg(ap, int);
+		
+		if (num > 90)
 			count++;
 	}
 	va_end(ap);
